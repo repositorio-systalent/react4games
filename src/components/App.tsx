@@ -1,5 +1,5 @@
 import React from 'react';
-import { GAME_SIZE } from '../setings/constants.ts';
+import { GAME_SIZE } from '../setings/constants';
 import './App.css';
 import Board from './Board';
 
