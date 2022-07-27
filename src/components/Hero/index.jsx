@@ -17,7 +17,7 @@ const Hero = () => {
         <div
             style={{
                 position: 'absolute',
-                bottom: TILE_SIZE * position.x,
+                top: TILE_SIZE * position.x,
                 left: TILE_SIZE * position.y,
                 width: TILE_SIZE,
                 height: TILE_SIZE + HEAD_OFFSET,

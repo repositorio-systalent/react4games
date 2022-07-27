@@ -10,7 +10,7 @@ function useEnemyMoviment(initialPosition) {
 
     useInterval(() => {
 
-        const randomDirection = Object.values(EDirection)[Math.floor(Math.random() * 3)]
+        const randomDirection = Object.values(EDirection)[Math.floor(Math.random() * 4)]
 
         const newPosition = handleNextMoviment(randomDirection, positionState);
 

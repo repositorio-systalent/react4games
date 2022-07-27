@@ -9,8 +9,9 @@ import Trap from "../Trap";
 const Board = () => {
     return (
       <div>
+        <MiniDemon initialPosition={{ x: 10, y: 10 }} />
+        <MiniDemon initialPosition={{ x: 5, y: 10 }} />
         <Hero />
-        <MiniDemon />
         <Demon />
         <Chest />
         <Trap />

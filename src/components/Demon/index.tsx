@@ -17,7 +17,7 @@ const Demon = () => {
         <div
             style={{
                 position: 'absolute',
-                bottom: TILE_SIZE * position.x,
+                top: TILE_SIZE * position.x,
                 left: TILE_SIZE * position.y,
                 width: DEMON_TILE_SIZE,
                 height: DEMON_TILE_SIZE,
