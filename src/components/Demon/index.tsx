@@ -3,22 +3,21 @@ import './index.css'
 import { TILE_SIZE, DEMON_TILE_SIZE, EDirection } from "../../setings/constants";
 import useEnemyMoviment from "../../hooks/useEnemyMoviment/index";
 
-const initialPosition = {
-    x: 10,
-    y: 7
-};
+interface IProps {
+    initialPosition: {x: number; y: number}
+}
 
-const Demon = () => {
+const Demon = ( props: IProps ) => {
 
-    const { position, direction } = useEnemyMoviment(initialPosition)
+    const { position, direction } = useEnemyMoviment(props.initialPosition)
 
 
     return (
         <div
             style={{
                 position: 'absolute',
-                top: TILE_SIZE * position.x,
-                left: TILE_SIZE * position.y,
+                top: TILE_SIZE * position.y,
+                left: TILE_SIZE * position.x,
                 width: DEMON_TILE_SIZE,
                 height: DEMON_TILE_SIZE,
                 backgroundImage: "url(./assets/DEMON.png)",

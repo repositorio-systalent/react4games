@@ -4,21 +4,16 @@ import { TILE_SIZE, HEAD_OFFSET, EDirection } from "../../setings/constants";
 import './index.css'
 import useHeroMoviment from "../../hooks/useHeroMoviment";
 
-const initialPosition = {
-    x: 15,
-    y: 15
-};
-
-const Hero = () => {
+const Hero = ( props ) => {
     
-   const { position, direction } = useHeroMoviment(initialPosition);
+   const { position, direction } = useHeroMoviment(props.initialPosition);
     
     return (
         <div
             style={{
                 position: 'absolute',
-                top: TILE_SIZE * position.x,
-                left: TILE_SIZE * position.y,
+                top: TILE_SIZE * position.y - HEAD_OFFSET,
+                left: TILE_SIZE * position.x,
                 width: TILE_SIZE,
                 height: TILE_SIZE + HEAD_OFFSET,
                 backgroundImage: "url(./assets/HERO.png)",

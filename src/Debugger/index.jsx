@@ -1,10 +1,10 @@
 import React from "react";
-import { canvas } from "../contexts/canvas/helpers";
+import { CanvasContext } from "../contexts/canvas";
 import Tile from "./Tile";
 
-function getCanvasMap() {
+function getCanvasMap(canvas) {
 
-    const telesComponent = []
+    const teleComponent = []
 
     for (let y = 0; y < canvas.length; y++) {
         for (let x = 0; x < canvas[y].length; x++) {
@@ -12,16 +12,16 @@ function getCanvasMap() {
             const position = { x, y };
             const text = canvas[y][x];
 
-            telesComponent.push(<Tile position={position} text={text} />)
+            teleComponent.push(<Tile key={`${x}-${y}`} position={position} text={text} />)
         }
     }
 
-    return telesComponent
+    return teleComponent
 }
 
 function Debugger() {
-
-    const tiles = getCanvasMap()
+    const canvasContext = React.useContext(CanvasContext)
+    const tiles = getCanvasMap(canvasContext.canvas)
 
     return (
         <div>

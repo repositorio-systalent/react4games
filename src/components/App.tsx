@@ -1,21 +1,19 @@
 import React from 'react';
-import Debugger from '../Debugger';
 import { GAME_SIZE } from '../setings/constants';
 import './App.css';
-import Board from './Board';
+import Game from './Game';
 
 function App() {
   return (
     <div className="App">
-      <div 
+      <div
         style={{
           position: 'relative',
           width: GAME_SIZE,
           height: GAME_SIZE
         }}
-        >
-        <Debugger />
-        <Board />
+      >
+        <Game />
       </div>
     </div>
   );
