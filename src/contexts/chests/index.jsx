@@ -4,20 +4,29 @@ export const ChestsContext = React.createContext({
     totalChests: 0,
     openedChests: {
         total: 0,
-        position :[]
+        positions: []
     },
-    updateOpenedChests: () => null
+    updateOpenedChests: (position) => null
 })
 
 function ChestsProvider(props) {
     const [chestsState, updateChestsState] = React.useState({
-        totalChests: 0,
+        totalChests: 2,
         openedChests: {
             total: 0,
-            position :[]
+            positions: []
         },
-        updateOpenedChests: () => {
-            console.log('chests')
+        updateOpenedChests: (position) => {
+            updateChestsState((prevState) => {
+                return {
+                    totalChests: prevState.totalChests,
+                    openedChests: {
+                        total: prevState.openedChests.total + 1,
+                        positions: prevState.openedChests.positions.concat(position),
+                    },
+                    updateOpenedChests: prevState.updateOpenedChests,
+                }
+            })
 
         }
     })

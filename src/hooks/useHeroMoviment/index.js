@@ -30,7 +30,11 @@ function useHeroMoviment (initialPosition) {
         }
 
         if(moviment.nextMove.chest){
-            chestsContext.updateOpenedChests()
+            chestsContext.updateOpenedChests(moviment.newPosition)
+        }
+
+        if(chestsContext.totalChests === chestsContext.openedChests.total &&  moviment.nextMove.door){
+            console.log("venceu")
         }
     })
 

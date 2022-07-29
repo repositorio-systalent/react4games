@@ -6,6 +6,7 @@ import Demon from "../Demon";
 import Chest from "../Chest";
 import Trap from "../Trap";
 import { canvas } from "../../contexts/canvas/helpers";
+import { ChestsContext } from "../../contexts/chests";
 
 function getCanvasMap() {
 
@@ -45,12 +46,24 @@ function getCanvasMap() {
 const elementes = getCanvasMap()
 
 const Board = () => {
+
+    const chestsContext = React.useContext(ChestsContext)  
+  
     return (
       <div>
         {elementes}
-        <img 
-          src="./assets/tileset.gif"  
-          alt="" 
+        {chestsContext.totalChests === chestsContext.openedChests.total && (
+          <img src="./assets/DOOR-OPEN.png" alt=""
+          style={{
+            position: "absolute",
+            left: 578,
+            top: 0,
+
+          }}
+        />
+        )}
+        
+        <img src="./assets/tileset.gif" alt="" 
           width={GAME_SIZE}
           height={GAME_SIZE}
         />

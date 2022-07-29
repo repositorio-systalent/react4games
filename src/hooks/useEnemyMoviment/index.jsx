@@ -22,6 +22,10 @@ function useEnemyMoviment(initialPosition) {
             positionUpdateStation(moviment.newPosition);
         }
 
+        if(moviment.nextMove.dead){
+            console.log("Você morreu !")
+        }
+
     }, 2000);
 
     return {
