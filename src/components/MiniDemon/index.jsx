@@ -27,6 +27,7 @@ const MiniDemon = ( props ) => {
                 animation: 'mini-demon-animation 1s steps(4) infinite',
                 backgroundPosition: `0px -${TILE_SIZE - HEAD_OFFSET}px`,
                 transform:`scalex(${direction === EDirection.RIGHT ? 1 : -1})`,
+                zIndex: 2
             }} 
         />
     )

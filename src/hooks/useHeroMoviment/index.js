@@ -1,7 +1,7 @@
 import useEventListener from "@use-it/event-listener";
 import React, { useState } from "react";
 import { EDirection, EWalker } from "../../setings/constants";
-import { checkValidMuviment, handleNextMoviment } from "../../contexts/canvas/helpers";
+import { isDead, isVictory } from "../../contexts/canvas/helpers";
 import { CanvasContext } from "../../contexts/canvas";
 import { ChestsContext } from "../../contexts/chests";
 
@@ -26,7 +26,7 @@ function useHeroMoviment (initialPosition) {
         }
 
         if(moviment.nextMove.dead){
-            console.log("você morreu")
+            isDead()
         }
 
         if(moviment.nextMove.chest){
@@ -34,7 +34,7 @@ function useHeroMoviment (initialPosition) {
         }
 
         if(chestsContext.totalChests === chestsContext.openedChests.total &&  moviment.nextMove.door){
-            console.log("venceu")
+            isVictory()
         }
     })
 

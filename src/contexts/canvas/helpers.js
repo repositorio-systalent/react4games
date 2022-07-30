@@ -43,7 +43,7 @@ const HE = ECamvas.HERO;
 
 export const canvas = [
     [WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, DR, DR, WL, WL, WL, WL, WL],
-    [WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, DR, DR, WL, WL, WL, WL, WL],
+    [WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, FL, FL, WL, WL, WL, WL, WL],
     [WL, FL, FL, WL, FL, FL, FL, FL, WL, FL, FL, FL, FL, FL, FL, FL, WL, FL, FL, WL],
     [WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, WL],
     [WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, CH, FL, FL, WL],
@@ -89,4 +89,19 @@ function getEnemyValidMoves(canvasValue) {
         chest: false,
         door: false
     }
+}
+
+export function isDead(){
+    setTimeout(()=>{
+        alert("Você morreu, tente novamente !")
+    })
+    document.location.reload(true);
+    
+}
+
+export function isVictory(){
+    setTimeout(()=>{
+        alert("Parabens você venceu !")
+    })
+    document.location.reload(true);
 }

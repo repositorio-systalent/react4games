@@ -1,7 +1,7 @@
 import useInterval from "@use-it/interval";
 import React from "react";
 import { CanvasContext } from "../../contexts/canvas";
-import { checkValidMuviment, handleNextMoviment } from "../../contexts/canvas/helpers";
+import { checkValidMuviment, handleNextMoviment, isDead } from "../../contexts/canvas/helpers";
 import { EDirection, EWalker } from "../../setings/constants";
 
 function useEnemyMoviment(initialPosition) {
@@ -23,7 +23,7 @@ function useEnemyMoviment(initialPosition) {
         }
 
         if(moviment.nextMove.dead){
-            console.log("Você morreu !")
+            isDead()
         }
 
     }, 2000);

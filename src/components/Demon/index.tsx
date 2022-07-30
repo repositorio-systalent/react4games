@@ -24,6 +24,7 @@ const Demon = ( props: IProps ) => {
                 backgroundRepeat: 'no-repeat',
                 animation: 'demon-animation 1s steps(4) infinite',
                 transform:`scalex(${direction === EDirection.RIGHT ? 1 : -1})`,
+                zIndex: 2
             }} 
         />
     )
